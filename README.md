@@ -1,4 +1,5 @@
-🐺 Defeat the Wolf - Derrote o Lobo
+🐺 Defeat the Wolf - Derrote o Lobo  
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Um mini-jogo de combate por turnos simples, focado em **probabilidade** e desenvolvido em **C** para fins de aprendizado e prática. Você enfrentará um lobo feroz e sua sobrevivência dependerá tanto de suas escolhas táticas quanto da sua sorte!
 
