@@ -83,3 +83,10 @@ Para compilar e executar este projeto, você precisará de um compilador C (como
 ## Autor
 
 **Criado por: Isa Clara**
+
+
+
+## Contato
+
+**LinkeIn: www.linkedin.com/in/isa-clara-siqueira-bb0b48361**<br>
+**Email: isaclaraoliveira@gmail.com**
