@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 
-// VARIï¿½VEIS GLOBAIS //
+// VARIÁVEIS GLOBAIS //
 #define atkIn 10
 #define atkPlayer 5
 int opcao, pocao = 3;
@@ -40,7 +40,7 @@ void usarPocao();
 
 
 /////////////////////////////////// INIMIGO ///////////////////////////////////////
-// Aï¿½ï¿½O DO INIMIGO //
+// AÇÕES DO INIMIGO //
 void acaoInimigo(){
 	system("cls");
 
@@ -70,16 +70,16 @@ void acaoInimigo(){
 	int resultado = rand() % 2;
 
 	if (resultado == 0) {
-		printf(RED "Vocï¿½ ï¿½ mordido pelo lobo.\n" RESET);
+		printf(RED "Você mordido pelo lobo.\n" RESET);
 		if (opcao == 2) {
-			printf("Vocï¿½ defendeu, vocï¿½ nï¿½o perde vida!\n");
+			printf("Você defendeu, você não perde vida!\n");
 		} else {
-			printf("Vocï¿½ perde vida!\n");
+			printf("Você perde vida!\n");
 			hpPlayer = hpPlayer - atkIn;
 		}
 	    getch();
 	}else {
-  	  	printf("O lobo nï¿½o consegue te morder.");
+  	  	printf("O lobo não consegue te morder.");
 	    getch();
 	}
 
@@ -93,18 +93,18 @@ void atacarInimigo(){
 	system("cls");
 
 	printf(GOLD "===========================================================\n" RESET);
-	printf(BOLD GREEN "Pressione qualquer tecla para ver se vocï¿½ consegue atacar!\n" RESET);
+	printf(BOLD GREEN "Pressione qualquer tecla para ver se você consegue atacar!\n" RESET);
 	printf(GOLD "===========================================================\n" RESET);
     getch();
 
     int resultado = rand() % 2;
 
 	if (resultado == 0) {
-	    printf("Vocï¿½ acertou o ataque!\n");
+	    printf("Você acertou o ataque!\n");
 	    hpIn = hpIn - atkPlayer;
 	    getch();
 	} else {
-	    printf(RED "Vocï¿½ errou o ataque...\n" RESET);
+	    printf(RED "Você errou o ataque...\n" RESET);
 	    getch();
 	}
 }
@@ -115,13 +115,13 @@ void defender(){
 	system("cls");
 
 	printf(GOLD "===========================================================\n" RESET);
-	printf(BOLD GREEN "Vocï¿½ passa essa rodada defendendo!\n" RESET);
+	printf(BOLD GREEN "Você passa essa rodada defendendo!\n" RESET);
 	printf(GOLD "============================================================\n" RESET);
 	getch();
 }
 
 
-// USAR POï¿½ï¿½O //
+// USAR POÇÃO //
 void usarPocao(){
 	system("cls");
 
@@ -130,12 +130,12 @@ void usarPocao(){
         hpPlayer += 5;
         if (hpPlayer > 50) hpPlayer = 50;
         printf(GOLD "===========================================================\n" RESET);
-		printf(BOLD GREEN "Vocï¿½ usou uma poï¿½ï¿½o e recuperou 5 HP!\n" RESET);
+		printf(BOLD GREEN "Você usou uma poção e recuperou 5 HP!\n" RESET);
     	printf(GOLD "===========================================================\n" RESET);
-        printf("Poï¿½ï¿½es restantes: %d", pocao);
+        printf("Poções restantes: %d", pocao);
         printf("\nHP agora: %d\n", hpPlayer);
     } else {
-        printf("\nVocï¿½ nï¿½o tem mais poï¿½ï¿½es!\n");
+        printf("\nVocê não tem mais poções!\n");
     }
     getch();
 }
@@ -173,18 +173,18 @@ void menu(){
 
 	printf(GOLD "=====================================\n" RESET);
 
-	printf(BOLD GREEN "            MENU DE Aï¿½ï¿½ES\n" RESET);
+	printf(BOLD GREEN "            MENU DE AÇÕES\n" RESET);
 	printf(GOLD "=====================================\n" RESET);
 
 	printf(GOLD "[1]" RESET  " Atacar o inimigo\n");
 	printf(GOLD "[2]" RESET " Defender\n");
-	printf(GOLD "[3]" RESET " Usar poï¿½ï¿½o de vida (%d)\n", pocao);
+	printf(GOLD "[3]" RESET " Usar poções de vida (%d)\n", pocao);
 	printf(GOLD "[4]" RESET " Correr\n");
 
 	printf(GOLD "=====================================\n" RESET);
 
 	// === INPUT ===
-	printf("\nEscolha sua aï¿½ï¿½o: ");
+	printf("\nEscolha sua ação: ");
 	if (scanf("%d", &opcao) != 1) {
 	    while (getchar() != '\n');
 	    opcao = 0;
@@ -203,7 +203,7 @@ void menu(){
 	case 4:
         break;
    default:
-		printf("\nEscolha invï¿½lida. Tente novamente.\n");
+		printf("\nEscolha inválida. Tente novamente.\n");
         getch();
         break;
    }
@@ -215,7 +215,7 @@ void menu(){
 
 
 
-/////////////////////////////////// MAIN ////////////////////////////////////////
+/////////////////////////////////// MAIN ///////////////////////////////////////
 int main(){
 	setlocale(LC_ALL, "portuguese");
 	srand((unsigned) time(NULL));
@@ -224,15 +224,15 @@ int main(){
 	}
 	if(opcao == 4){
 		system("cls");
-		printf(BOLD GREEN"\nVocï¿½ correu do Lobo...\n" RESET);
+		printf(BOLD GREEN"\nVocê correu do Lobo...\n" RESET);
 		getch();
 	} else if(hpPlayer <= 0){
 		system("cls");
-        printf(RED "Vocï¿½ foi derrotado pelo lobo...\n" RESET);
+        printf(RED "Você foi derrotado pelo lobo...\n" RESET);
         getch();
 	} else if (hpIn <= 0){
 		system("cls");
-        printf(GREEN BOLD "Vocï¿½ derrotou o lobo! Parabï¿½ns!\n" RESET);
+        printf(GREEN BOLD "Você derrotou o lobo! Parabéns!\n" RESET);
 		getch();
 	}
 
